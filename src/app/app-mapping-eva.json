@@ -1,0 +1,126 @@
+{
+  "strict": {
+    "text-font-family": "opensans-regular"
+  }, 
+  "components": {  
+
+    "Input" :{
+      "appearances": {
+        "default":{
+          "mapping":{
+            "paddingHorizontal": -32
+          }
+        }
+      }
+    },
+    
+    "Select" :{
+      "appearances": {
+        "default":{
+          "mapping":{
+            "paddingHorizontal": -32
+          }
+        }
+      }
+    },
+
+    "Card": {
+      "appearances": {
+        "outline": {
+          "mapping": {
+            "headerPaddingHorizontal": -8,
+            "headerPaddingVertical": -8,
+            "bodyPaddingHorizontal": -16,
+            "bodyPaddingVertical": -16
+          }
+        }
+      }
+    },
+    
+    "TopNavigation": {
+      "meta": {
+        "variantGroups": {
+          "alignment": {
+            "center": {
+              "default": true
+            },
+            "start": {
+              "default": false
+            }
+          }
+        }
+      }
+    },
+
+    "StatusBar": {
+      "meta": {
+        "scope": "mobile",
+        "parameters": {
+          "barStyle": {
+            "type": "string"
+          },
+          "backgroundColor": {
+            "type": "string"
+          }
+        },
+        "appearances": {
+          "default": {
+            "default": true
+          }
+        },
+        "variantGroups": {},
+        "states": {}
+      },
+      "appearances": {
+        "default": {
+          "mapping": {
+            "barStyle": "dark-content",
+            "backgroundColor": "background-basic-color-2"
+          }
+        }
+      }
+    },
+    
+    "SafeAreaLayout": {
+      "meta": {
+        "scope": "mobile",
+        "parameters": {
+          "backgroundColor": {
+            "type": "string"
+          }
+        },
+        "appearances": {
+          "default": {
+            "default": true
+          }
+        },
+        "variantGroups": {
+          "insets": {
+            "top": {
+              "default": false
+            },
+            "bottom": {
+              "default": false
+            }
+          }
+        },
+        "states": {}
+      },
+      "appearances": {
+        "default": {
+          "mapping": {},
+          "variantGroups": {
+            "position": {
+              "top": {
+                "backgroundColor": "background-basic-color-2"
+              },
+              "bottom": {
+                "backgroundColor": "background-basic-color-1"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

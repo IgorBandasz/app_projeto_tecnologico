@@ -1,0 +1,26 @@
+require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
+
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '13.0'
+
+install! 'cocoapods', :deterministic_uuids => false
+production = ENV["PRODUCTION"] == "1"
+
+target 'apppneu' do
+  
+  use_expo_modules!
+  config = use_native_modules!  
+  use_react_native!(:path => config[:reactNativePath]) 
+
+end 
+
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+    config.build_settings['SWIFT_VERSION'] = '5.0'
+  end
+  react_native_post_install(installer)
+end

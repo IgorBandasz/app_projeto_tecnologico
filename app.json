@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "apppneu",
+    "slug": "apppneu",
+    "version": "1.0.0",
+    "description": "App de Movimentação de Pneus da AnexoTecnologia.com.br",
+    "githubUrl": "https://github.com/anexotecnologia/app-apppneu",
+    "ios": {
+      "bundleIdentifier": "com.anexotecnologia.apppneu",
+      "appStoreUrl": "https://itunes.apple.com/us/app/???/id???",
+      "buildNumber": "3"
+    },
+    "android": {
+      "package": "com.anexotecnologia.apppneu",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=???",
+      "versionCode": 3
+    },
+    "privacy": "private",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "icon": "./src/assets/images/image-app-icon.png",
+    "splash": {
+      "image": "src/assets/images/image-splash.png",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": [
+      "src/assets/images/*",
+      "src/assets/fonts",
+      "src/layouts/**/assets/*"
+    ],
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#F7F9FC"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  }
+}
