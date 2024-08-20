@@ -249,7 +249,7 @@ export default ({ navigation, route }): React.ReactElement => {
             mask='inteiro'
             maxLength={8}
             keyboardType='numeric'
-            inputMaskChange={text => formik.setFieldValue('SulcoAtual', parseInt(text))}
+            inputMaskChange={text => formik.setFieldValue('SulcoAtual', text)}
             accessoryLeft={(props) => iconDiminuir({...props, nome: 'SulcoAtual'})}
             accessoryRight={(props) => iconAumentar({...props, nome: 'SulcoAtual'})}/>
           

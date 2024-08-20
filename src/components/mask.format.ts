@@ -37,17 +37,11 @@ export const maskTime = (value: string) => {
 }
 
 export const maskInteger = (value: string) => {
-  if(value == '')
-    value= '0';
-    
   return value
     .replace(/\D/g, "");
 }
 
 export const maskCurrency = (value: string, casas: number = 2) => {
-  if(value == '')
-    value= '0';
-
   var regex = new RegExp("(\\d)(\\d{" + casas + "})$");
   return value
     .replace(/\D/g, "")
@@ -57,9 +51,6 @@ export const maskCurrency = (value: string, casas: number = 2) => {
 
 export const maskFloat = (value: string, casas: number = 2) => {
   const inteiro = new RegExp("^[0-9]*$");
-
-  if(value == '')
-    value= '0';
 
   if(inteiro.test(value))
     return value;

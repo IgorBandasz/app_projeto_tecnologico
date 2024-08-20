@@ -61,7 +61,7 @@ export default ({ navigation }): React.ReactElement => {
     try {
       const service = new UsuarioService();
       const result = await service.login(values.login, values.senha);
-      console.log(result)
+      
       if (result.status === 200) {
         if(result.data.PermitirMobile){
           AppStorage.setLogin({
@@ -126,7 +126,7 @@ export default ({ navigation }): React.ReactElement => {
           <Text
             status='control'
             category='h6'>
-            ANEXOTECNOLOGIA.com.br
+            anexotecnologia.com.br
           </Text>
 
           <Text

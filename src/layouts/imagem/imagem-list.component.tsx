@@ -95,8 +95,7 @@ export const PneuImagemList = (props: PneuImagemListProps): ReactElement => {
   }
 
   const renderItem = (info: ListRenderItemInfo<IPneuImagem>): CardElement => (
-    <Card
-      onPress={() => viewPressButton(info.item)}>
+    <Card>
       <Swippeable
         ref={ref => row[info.index] = ref}
         onSwipeableOpen={() => closeRow(info.index)}
@@ -121,6 +120,7 @@ export const PneuImagemList = (props: PneuImagemListProps): ReactElement => {
 
         <RectButton
           style={{ flexDirection: 'row', marginVertical: 4, backgroundColor: info.index % 2 === 0 ? '#f2f2f2' : 'white' }}
+          onPress={() => viewPressButton(info.item)}
           key={info.index}>
 
           <View
