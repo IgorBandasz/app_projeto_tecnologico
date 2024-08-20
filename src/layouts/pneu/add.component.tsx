@@ -467,13 +467,13 @@ export default ({ navigation, route }): React.ReactElement => {
                 style={styles.input}
                 label={formik.values.Status == 0 ? 'Valor Aquisição' : 'Valor Reforma'}
                 placeholder={formik.values.Status == 0 ? 'Informe o Valor de Aquisição' : 'Informe o Valor da Reforma'}
-                value={formatQuant(formik.values.ValorAquisicao)}
+                value={`${formik.values.ValorAquisicao}`}
                 status={formik.errors['ValorAquisicao'] ? 'danger' : 'info'}
                 caption={formik.errors['ValorAquisicao']}
                 mask='moeda'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('ValorAquisicao', strToFloat(text))}/>
+                inputMaskChange={text => formik.setFieldValue('ValorAquisicao', text)}/>
               </>
           }
 
@@ -526,7 +526,7 @@ export default ({ navigation, route }): React.ReactElement => {
             mask='inteiro'
             maxLength={8}
             keyboardType='numeric'
-            inputMaskChange={text => formik.setFieldValue('CapacidadeLona', parseInt(text))}/>
+            inputMaskChange={text => formik.setFieldValue('CapacidadeLona', text)}/>
 
           <Mask
             style={styles.input}
@@ -539,7 +539,7 @@ export default ({ navigation, route }): React.ReactElement => {
             mask='inteiro'
             maxLength={8}
             keyboardType='numeric'
-            inputMaskChange={text => formik.setFieldValue('SulcoMin', parseInt(text))}
+            inputMaskChange={text => formik.setFieldValue('SulcoMin', text)}
             accessoryLeft={(props) => iconDiminuir({...props, nome: 'SulcoMin'})}
             accessoryRight={(props) => iconAumentar({...props, nome: 'SulcoMin'})}/>
 
@@ -556,7 +556,7 @@ export default ({ navigation, route }): React.ReactElement => {
                 mask='inteiro'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('SulcoMax', parseInt(text))}
+                inputMaskChange={text => formik.setFieldValue('SulcoMax', text)}
                 accessoryLeft={(props) => iconDiminuir({...props, nome: 'SulcoMax'})}
                 accessoryRight={(props) => iconAumentar({...props, nome: 'SulcoMax'})}/>
           }
@@ -572,7 +572,7 @@ export default ({ navigation, route }): React.ReactElement => {
             mask='inteiro'
             maxLength={8}
             keyboardType='numeric'
-            inputMaskChange={text => formik.setFieldValue('SulcoAtual', parseInt(text))}
+            inputMaskChange={text => formik.setFieldValue('SulcoAtual', text)}
             accessoryLeft={(props) => iconDiminuir({...props, nome: 'SulcoAtual'})}
             accessoryRight={(props) => iconAumentar({...props, nome: 'SulcoAtual'})}/>
 
@@ -589,7 +589,7 @@ export default ({ navigation, route }): React.ReactElement => {
                 mask='inteiro'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('PressaoMin', parseInt(text))}/>
+                inputMaskChange={text => formik.setFieldValue('PressaoMin', text)}/>
 
               <Mask
                 style={styles.input}
@@ -601,7 +601,7 @@ export default ({ navigation, route }): React.ReactElement => {
                 mask='inteiro'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('PressaoMax', parseInt(text))}/>
+                inputMaskChange={text => formik.setFieldValue('PressaoMax', text)}/>
             </>
           }
 
@@ -615,7 +615,7 @@ export default ({ navigation, route }): React.ReactElement => {
             mask='inteiro'
             maxLength={8}
             keyboardType='numeric'
-            inputMaskChange={text => formik.setFieldValue('PressaoAtual', parseInt(text))}/>
+            inputMaskChange={text => formik.setFieldValue('PressaoAtual', text)}/>
 
           {
             permissao.CadastroCompletoPneu &&
@@ -630,7 +630,7 @@ export default ({ navigation, route }): React.ReactElement => {
                 mask='inteiro'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('VidaUtilEsperadaHr', parseInt(text))}/>
+                inputMaskChange={text => formik.setFieldValue('VidaUtilEsperadaHr', text)}/>
 
               <Mask
                 style={styles.input}
@@ -642,7 +642,7 @@ export default ({ navigation, route }): React.ReactElement => {
                 mask='inteiro'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('HrAcumulado', parseInt(text))}/>
+                inputMaskChange={text => formik.setFieldValue('HrAcumulado', text)}/>
 
               <Mask
                 style={styles.input}
@@ -654,20 +654,19 @@ export default ({ navigation, route }): React.ReactElement => {
                 mask='inteiro'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('HrAtual', parseInt(text))}/>
+                inputMaskChange={text => formik.setFieldValue('HrAtual', text)}/>
 
               <Mask
                 style={styles.input}
                 label='KM Projetados do Pneu'
                 placeholder='Informe o KM Projetados'
-                value={formatQuant(formik.values.VidaUtilEsperadaKm, 2)}
+                value={`${formik.values.VidaUtilEsperadaKm}`}
                 status={formik.errors['VidaUtilEsperadaKm'] ? 'danger' : 'info'}
                 caption={formik.errors['VidaUtilEsperadaKm']}
-                mask='quant'
-                casas={2}
+                mask='moeda'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('VidaUtilEsperadaKm', strToFloat(text))}/>
+                inputMaskChange={text => formik.setFieldValue('VidaUtilEsperadaKm', text)}/>
 
               <Mask
                 style={styles.input}
@@ -679,7 +678,7 @@ export default ({ navigation, route }): React.ReactElement => {
                 mask='moeda'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('KmAcumulado', strToFloat(text))}/>
+                inputMaskChange={text => formik.setFieldValue('KmAcumulado', text)}/>
 
               <Mask
                 style={styles.input}
@@ -691,7 +690,7 @@ export default ({ navigation, route }): React.ReactElement => {
                 mask='inteiro'
                 maxLength={8}
                 keyboardType='numeric'
-                inputMaskChange={text => formik.setFieldValue('KmAtual', parseInt(text))}/>
+                inputMaskChange={text => formik.setFieldValue('KmAtual', text)}/>
             </>
           }
 

@@ -116,6 +116,7 @@ export const PneuList = (props: PneuListProps): ListElement => {
         )}>
 
         <RectButton
+          
           style={[styles.container, {backgroundColor: info.item.AferiuHoje == true && '#98FB98'}]}  >
 
           <View

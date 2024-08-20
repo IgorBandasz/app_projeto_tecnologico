@@ -142,8 +142,8 @@ android {
         applicationId "com.anexotecnologia.apppneu"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 18
-        versionName "1.18"
+        versionCode 16
+        versionName "1.16"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
         missingDimensionStrategy 'react-native-camera', 'mlkit' // <--- replace general with mlkit
 
